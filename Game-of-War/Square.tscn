@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/edge.png" type="Texture" id=1]
+[ext_resource path="res://Square.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.9609, 49.9609 )
+
+[node name="Square" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -45.0
+margin_top = -45.0
+margin_right = 45.0
+margin_bottom = 45.0
+mouse_filter = 2
+color = Color( 0.117647, 0.792157, 0.109804, 0.498039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="input_event" from="." to="." method="_on_Square_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_Square_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Square_mouse_exited"]

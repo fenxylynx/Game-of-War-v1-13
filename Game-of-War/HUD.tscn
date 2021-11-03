@@ -1,0 +1,855 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/eve.png" type="Texture" id=3]
+[ext_resource path="res://assets/layout/1.png" type="Texture" id=4]
+[ext_resource path="res://assets/wK.png" type="Texture" id=6]
+[ext_resource path="res://assets/font/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="BoarderTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionLabel" type="Label" parent="."]
+margin_left = 705.0
+margin_top = 524.0
+margin_right = 815.0
+margin_bottom = 550.0
+custom_fonts/font = SubResource( 1 )
+text = "version"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PromotionList" type="ItemList" parent="."]
+visible = false
+margin_left = 659.263
+margin_top = 438.948
+margin_right = 717.263
+margin_bottom = 478.948
+auto_height = true
+fixed_icon_size = Vector2( 50, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartPanel" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 300.0
+margin_top = -250.0
+margin_right = 575.0
+margin_bottom = 250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FocusStealer" type="TextureButton" parent="StartPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="StartPanel"]
+anchor_right = 1.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Game of War"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="StartPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.421
+margin_top = -243.706
+margin_right = -107.421
+margin_bottom = -217.706
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 1 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorBotton" type="Button" parent="StartPanel"]
+margin_left = 250.809
+margin_top = 6.3496
+margin_right = 274.809
+margin_bottom = 32.3496
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 1 )
+text = "C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameEdit" type="LineEdit" parent="StartPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.5
+margin_top = -211.0
+margin_right = 124.5
+margin_bottom = -181.0
+custom_fonts/font = SubResource( 1 )
+max_length = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinGameButton" type="Button" parent="StartPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -68.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 62.0
+hint_tooltip = "Click this if you are joining someone's link"
+custom_fonts/font = SubResource( 1 )
+text = "Connect to link"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostGameButton" type="Button" parent="StartPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = 77.0
+margin_right = 75.0
+margin_bottom = 103.0
+hint_tooltip = "Click this to create a game link for someone to connect to."
+custom_fonts/font = SubResource( 1 )
+text = "Create game link"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostColorLabel" type="Label" parent="StartPanel"]
+margin_left = 10.0
+margin_top = 376.0
+margin_right = 76.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 1 )
+text = "Play as:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostColorList" type="ItemList" parent="StartPanel"]
+margin_left = 46.0
+margin_top = 396.0
+margin_right = 253.0
+margin_bottom = 421.0
+custom_styles/bg_focus = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
+auto_height = true
+max_columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostTimeTitleLabal" type="Label" parent="StartPanel"]
+margin_left = 10.0
+margin_top = 435.0
+margin_right = 109.0
+margin_bottom = 455.0
+custom_fonts/font = SubResource( 1 )
+text = "Time format"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostTimePlusLabel" type="Label" parent="StartPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -42.0
+margin_right = 6.0
+margin_bottom = -22.0
+custom_fonts/font = SubResource( 1 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostTimeMinuteEdit" type="LineEdit" parent="StartPanel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -45.0
+margin_right = 100.0
+margin_bottom = -15.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostTimeIncrementEdit" type="LineEdit" parent="StartPanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -45.0
+margin_right = -30.0
+margin_bottom = -15.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusLabel" type="Label" parent="StartPanel"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_right = 1.0
+margin_top = 246.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 1 )
+text = "status label"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="StartPanel"]
+anchor_right = 1.0
+margin_top = 82.0
+margin_bottom = 86.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator2" type="HSeparator" parent="StartPanel"]
+anchor_right = 1.0
+margin_top = 240.0
+margin_bottom = 244.0
+
+[node name="HSeparator3" type="HSeparator" parent="StartPanel"]
+anchor_right = 1.0
+margin_top = 270.0
+margin_bottom = 274.0
+
+[node name="HSeparator4" type="HSeparator" parent="StartPanel"]
+anchor_right = 1.0
+margin_top = 365.0
+margin_bottom = 369.0
+
+[node name="ColorPickerPanel" type="Panel" parent="StartPanel"]
+margin_left = 283.0
+margin_top = 8.0
+margin_right = 576.0
+margin_bottom = 468.0
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPicker" type="ColorPicker" parent="StartPanel"]
+margin_left = 295.0
+margin_top = 20.0
+margin_right = 596.0
+margin_bottom = 482.0
+rect_scale = Vector2( 0.75, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GamePanel" type="Panel" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 300.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FocusStealer" type="TextureButton" parent="GamePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.353561
+margin_bottom = -0.353577
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpponentNameLabel" type="Label" parent="GamePanel"]
+margin_left = 25.0
+margin_top = 12.0
+margin_right = 205.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "Opponent"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpponentTimeLabel" type="Label" parent="GamePanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_top = 12.0
+margin_right = -15.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "13:30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpponentCrown" type="TextureRect" parent="GamePanel"]
+modulate = Color( 1, 0.843137, 0, 1 )
+margin_left = 4.0
+margin_top = 12.0
+margin_right = 178.0
+margin_bottom = 193.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="GamePanel"]
+anchor_right = 1.0
+margin_top = 47.0
+margin_bottom = 51.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator2" type="HSeparator" parent="GamePanel"]
+anchor_right = 1.0
+margin_top = 155.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator3" type="HSeparator" parent="GamePanel"]
+anchor_right = 1.0
+margin_top = 453.0
+margin_bottom = 457.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator4" type="HSeparator" parent="GamePanel"]
+anchor_right = 1.0
+margin_top = 302.0
+margin_bottom = 306.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNameLabel" type="Label" parent="GamePanel"]
+margin_left = 25.0
+margin_top = 468.0
+margin_right = 205.0
+margin_bottom = 488.0
+custom_fonts/font = SubResource( 1 )
+text = "Player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerTimeLabel" type="Label" parent="GamePanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -32.0
+margin_right = -15.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 1 )
+text = "13:30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerCrown" type="TextureRect" parent="GamePanel"]
+modulate = Color( 1, 0.843137, 0, 1 )
+margin_left = 4.0
+margin_top = 468.0
+margin_right = 178.0
+margin_bottom = 649.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatRichTextLabel" type="RichTextLabel" parent="GamePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -133.0
+margin_top = 61.0
+margin_right = 133.0
+margin_bottom = 162.0
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatLineEdit" type="LineEdit" parent="GamePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = 168.0
+margin_right = 134.5
+margin_bottom = 198.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveItemList" type="ItemList" parent="GamePanel"]
+margin_left = 5.0
+margin_top = 77.0
+margin_right = 270.0
+margin_bottom = 148.0
+max_columns = 3
+fixed_column_width = 75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveListTurn" type="Label" parent="GamePanel"]
+margin_left = 4.0
+margin_top = 55.0
+margin_right = 68.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+text = "Turn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveListWhite" type="Label" parent="GamePanel"]
+margin_left = 92.0
+margin_top = 55.0
+margin_right = 142.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+text = "White"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveListBlack" type="Label" parent="GamePanel"]
+anchor_top = -0.00141422
+anchor_bottom = -0.00141422
+margin_left = 178.0
+margin_top = 55.7071
+margin_right = 224.0
+margin_bottom = 75.7071
+custom_fonts/font = SubResource( 1 )
+text = "Black"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReadyButton" type="Button" parent="GamePanel"]
+margin_left = 10.0
+margin_top = 165.0
+margin_right = 120.0
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 1 )
+text = "Ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawButton" type="Button" parent="GamePanel"]
+margin_left = 10.0
+margin_top = 200.0
+margin_right = 120.0
+margin_bottom = 226.0
+custom_fonts/font = SubResource( 1 )
+text = "Draw"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawYes" type="Button" parent="GamePanel"]
+modulate = Color( 0, 1, 0, 1 )
+margin_left = 14.0
+margin_top = 200.0
+margin_right = 58.0
+margin_bottom = 226.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawNo" type="Button" parent="GamePanel"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 72.0
+margin_top = 200.0
+margin_right = 116.0
+margin_bottom = 226.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GiveTimeButton" type="Button" parent="GamePanel"]
+margin_left = 10.0
+margin_top = 235.0
+margin_right = 120.0
+margin_bottom = 261.0
+custom_fonts/font = SubResource( 1 )
+text = "Give time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TakeBackButton" type="Button" parent="GamePanel"]
+margin_left = 10.0
+margin_top = 270.0
+margin_right = 120.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 1 )
+text = "Take back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="GamePanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -85.0
+margin_right = -10.0
+margin_bottom = -59.0
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpecialButton" type="Button" parent="GamePanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -44.0
+margin_right = -40.0
+margin_bottom = 6.0
+custom_fonts/font = SubResource( 1 )
+icon = ExtResource( 3 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResignButton" type="Button" parent="GamePanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 20.0
+margin_right = -10.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+text = "Resign"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TakebackYes" type="Button" parent="GamePanel"]
+modulate = Color( 0, 1, 0, 1 )
+margin_left = 14.0
+margin_top = 270.0
+margin_right = 58.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TakebackNo" type="Button" parent="GamePanel"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 72.0
+margin_top = 270.0
+margin_right = 116.0
+margin_bottom = 296.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="GamePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.5
+margin_top = 24.0
+margin_right = 14.5
+margin_bottom = 50.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = SubResource( 1 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemePanel" type="Panel" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 300.378
+margin_top = -249.788
+margin_right = 575.378
+margin_bottom = 250.212
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FocusStealer" type="TextureButton" parent="ThemePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="ThemePanel"]
+anchor_right = 1.0
+margin_top = 5.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
+text = "Themes"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="ThemePanel"]
+anchor_right = 1.0
+margin_top = 27.0
+margin_bottom = 31.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoardList" type="ItemList" parent="ThemePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.5
+margin_top = -206.0
+margin_right = 128.5
+margin_bottom = 4.0
+custom_constants/vseparation = 10
+custom_constants/line_separation = 10
+custom_constants/hseparation = 10
+max_columns = 2
+fixed_icon_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoarderList" type="ItemList" parent="ThemePanel"]
+margin_left = 9.0
+margin_top = 276.0
+margin_right = 266.0
+margin_bottom = 486.0
+custom_constants/vseparation = 10
+custom_constants/line_separation = 10
+custom_constants/hseparation = 10
+max_columns = 2
+fixed_icon_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeCloseButton" type="Button" parent="ThemePanel"]
+margin_left = 251.0
+margin_top = 4.0
+margin_right = 271.0
+margin_bottom = 24.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialPanel" type="Panel" parent="."]
+visible = false
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 800.0
+margin_bottom = 525.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page" type="TextureRect" parent="TutorialPanel"]
+margin_left = 135.0
+margin_right = 775.0
+margin_bottom = 500.0
+rect_clip_content = true
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="TutorialPanel"]
+margin_left = 110.0
+margin_top = 5.0
+margin_right = 130.0
+margin_bottom = 25.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionPanel" type="Panel" parent="."]
+visible = false
+margin_left = 25.0
+margin_top = 179.0
+margin_right = 300.0
+margin_bottom = 330.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemesButton" type="Button" parent="OptionPanel"]
+margin_left = 10.0
+margin_top = 11.0
+margin_right = 120.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "Themes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XButton" type="Button" parent="OptionPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 108.5
+margin_top = -61.5
+margin_right = 131.5
+margin_bottom = -35.5
+rect_scale = Vector2( 0.75, 0.75 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveOption" type="OptionButton" parent="OptionPanel"]
+margin_left = 10.0
+margin_top = 46.0
+margin_right = 265.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 1 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveDrawOption" type="OptionButton" parent="OptionPanel"]
+margin_left = 10.0
+margin_top = 81.0
+margin_right = 265.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 1 )
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="PromotionList" to="." method="_on_PromotionList_item_selected"]
+[connection signal="button_down" from="StartPanel/HelpButton" to="." method="_on_HelpButton_button_down"]
+[connection signal="button_down" from="StartPanel/ColorBotton" to="." method="_on_ColorBotton_button_down"]
+[connection signal="text_changed" from="StartPanel/NameEdit" to="." method="_on_NameEdit_text_changed"]
+[connection signal="text_entered" from="StartPanel/NameEdit" to="." method="_on_NameEdit_text_entered"]
+[connection signal="button_down" from="StartPanel/JoinGameButton" to="." method="_on_JoinGameButton_button_down"]
+[connection signal="button_down" from="StartPanel/HostGameButton" to="." method="_on_HostGameButton_button_down"]
+[connection signal="item_selected" from="StartPanel/HostColorList" to="." method="_on_HostColorList_item_selected"]
+[connection signal="text_changed" from="StartPanel/HostTimeMinuteEdit" to="." method="_on_HostTimeMinuteEdit_text_changed"]
+[connection signal="text_entered" from="StartPanel/HostTimeMinuteEdit" to="." method="_on_HostTimeMinuteEdit_text_entered"]
+[connection signal="text_changed" from="StartPanel/HostTimeIncrementEdit" to="." method="_on_HostTimeIncrementEdit_text_changed"]
+[connection signal="text_entered" from="StartPanel/HostTimeIncrementEdit" to="." method="_on_HostTimeIncrementEdit_text_entered"]
+[connection signal="color_changed" from="StartPanel/ColorPicker" to="." method="_on_ColorPicker_color_changed"]
+[connection signal="text_entered" from="GamePanel/ChatLineEdit" to="." method="_on_ChatLineEdit_text_entered"]
+[connection signal="button_down" from="GamePanel/ReadyButton" to="." method="_on_ReadyButton_button_down"]
+[connection signal="button_down" from="GamePanel/DrawButton" to="." method="_on_DrawButton_button_down"]
+[connection signal="button_down" from="GamePanel/DrawYes" to="." method="_on_DrawYes_button_down"]
+[connection signal="button_down" from="GamePanel/DrawNo" to="." method="_on_DrawNo_button_down"]
+[connection signal="button_down" from="GamePanel/GiveTimeButton" to="." method="_on_GiveTimeButton_button_down"]
+[connection signal="button_down" from="GamePanel/TakeBackButton" to="." method="_on_TakeBackButton_button_down"]
+[connection signal="button_down" from="GamePanel/OptionsButton" to="." method="_on_OptionsButton_button_down"]
+[connection signal="button_down" from="GamePanel/SpecialButton" to="." method="_on_SpecialButton_button_down"]
+[connection signal="button_down" from="GamePanel/ResignButton" to="." method="_on_ResignButton_button_down"]
+[connection signal="button_down" from="GamePanel/TakebackYes" to="." method="_on_TakebackYes_button_down"]
+[connection signal="button_down" from="GamePanel/TakebackNo" to="." method="_on_TakebackNo_button_down"]
+[connection signal="button_down" from="GamePanel/HelpButton" to="." method="_on_HelpButton_button_down"]
+[connection signal="item_selected" from="ThemePanel/BoardList" to="." method="_on_BoardList_item_selected"]
+[connection signal="item_selected" from="ThemePanel/BoarderList" to="." method="_on_BoarderList_item_selected"]
+[connection signal="button_down" from="ThemePanel/ThemeCloseButton" to="." method="_on_ThemeCloseButton_button_down"]
+[connection signal="button_down" from="TutorialPanel/Close" to="." method="_on_TutorialClose_button_down"]
+[connection signal="button_down" from="OptionPanel/ThemesButton" to="." method="_on_ThemesButton_button_down"]
+[connection signal="button_down" from="OptionPanel/XButton" to="." method="_on_OptionsXButton_button_down"]
+[connection signal="item_focused" from="OptionPanel/MoveOption" to="." method="_on_MoveOption_item_set"]
+[connection signal="item_selected" from="OptionPanel/MoveOption" to="." method="_on_MoveOption_item_set"]
+[connection signal="item_focused" from="OptionPanel/MoveDrawOption" to="." method="_on_MoveDrawOption_item_set"]
+[connection signal="item_selected" from="OptionPanel/MoveDrawOption" to="." method="_on_MoveDrawOption_item_set"]
